@@ -1,5 +1,5 @@
 program exponencial
-!Resolucion de la ecuacion diferencial X'(t)=k_g*X(t) con runge kutta de orden 2
+!Resuelucion la ecuacion exponencial X'(t)=k_g*X(t) con runge kutta de orden 2
 implicit none
 
 real(kind=8) t0,tmax,dt,x0,y0,k
@@ -32,7 +32,7 @@ do i=1,N !runge kutta
   end do
 end do
 !**********************************************************************
-open(1,file='exponencial.dat') !llenando archivo
+open(1,file='exponencialCorr.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do

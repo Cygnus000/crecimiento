@@ -22,20 +22,23 @@ end do
 !**********************************************************************
  x(0) = x0 !valores iniciales
 !**********************************************************************
-do i=1,N !runge kutta
-  do j=1,2
-    if (j.eq.1) then
+do i=1,N !runge kutta 2
       x(i) = x(i-1) + k * x(i-1) * dt
-    else
       x(i) = 0.5d0 * (x(i-1) + k * x(i-1) * dt + x(i))
-    end if
-  end do
 end do
 !**********************************************************************
+call imprimir()
+call system('gnuplot -p exponencial.p')
+!**********************************************************************
+contains
+!**********************************************************************
+subroutine imprimir()
+
 open(1,file='exponencial.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do
 close(1) 
-!**********************************************************************
+
+end subroutine
 end program exponencial
