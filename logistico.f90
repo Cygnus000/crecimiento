@@ -2,7 +2,7 @@ program logistico
 !Resuelucion la ecuacion logistica X'(t)=k_g*X(t)*(1-(x(t)/x_max)) con runge kutta de orden 2
 implicit none
 
-real(kind=8) t0,tmax,dt,x0,y0,k,x_max
+real(kind=8) t0,tmax,dt,x0,k,x_max
 real(kind=8), allocatable, dimension (:) :: t,x
 integer i,j,N
 
@@ -37,6 +37,7 @@ open(1,file='logistico.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do
-close(1) 
+close(1)
+call system('gnuplot -p logistico.p')
 !**********************************************************************
 end program logistico

@@ -2,7 +2,7 @@ program lineal
 !Resuelucion la ecuacion lineal X'(t)=k_g con runge kutta de orden 2
 implicit none
 
-real(kind=8) t0,tmax,dt,x0,y0,k
+real(kind=8) t0,tmax,dt,x0,k
 real(kind=8), allocatable, dimension (:) :: t,x
 integer i,j,N
 
@@ -36,6 +36,7 @@ open(1,file='lineal.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do
-close(1) 
+close(1)
+call system('gnuplot -p lineal.p')
 !**********************************************************************
 end program lineal

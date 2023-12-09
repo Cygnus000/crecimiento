@@ -2,7 +2,7 @@ program expGeneralizado
 !Resolucion de la ecuacion diferencial X'(t)=k*X**gamma con runge kutta de orden 2
 implicit none
 
-real(kind=8) t0,tmax,dt,x0,z0,k,gama
+real(kind=8) t0,tmax,dt,x0,k,gama
 real(kind=8), allocatable, dimension (:) :: t,x,z
 integer i,j,N
 
@@ -37,6 +37,7 @@ open(1,file='expGeneralizado.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do
-close(1) 
+close(1)
+call system('gnuplot -p expGeneralizado.p')
 !**********************************************************************
 end program expGeneralizado

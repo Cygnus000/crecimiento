@@ -2,7 +2,7 @@ program gompertz
 !Resolucion de la ecuacion de gompertz X'(t)=k_g*X(t)*ln(1-(X_max/X(t))) con runge kutta de orden 2
 implicit none
 
-real(kind=8) t0,tmax,dt,x0,y0,k_g,x_max
+real(kind=8) t0,tmax,dt,x0,k_g,x_max
 real(kind=8), allocatable, dimension (:) :: t,x
 integer i,j,N
 
@@ -37,6 +37,7 @@ open(1,file='gompertz.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do
-close(1) 
+close(1)
+call system('gnuplot -p gompertz.p')
 !**********************************************************************
 end program gompertz

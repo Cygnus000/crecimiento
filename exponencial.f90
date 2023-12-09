@@ -2,7 +2,7 @@ program exponencial
 !Resolucion de la ecuacion diferencial X'(t)=k_g*X(t) con runge kutta de orden 2
 implicit none
 
-real(kind=8) t0,tmax,dt,x0,y0,k
+real(kind=8) t0,tmax,dt,x0,k
 real(kind=8), allocatable, dimension (:) :: t,x
 integer i,j,N
 
@@ -36,6 +36,7 @@ open(1,file='exponencial.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do
-close(1) 
+close(1)
+call system('gnuplot -p exponencial.p')
 !**********************************************************************
 end program exponencial
