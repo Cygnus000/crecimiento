@@ -41,6 +41,7 @@ open(1,file='cuadratico.dat') !llenando archivo
 do i=0,N,1
   write(1,*) t(i),x(i)
 end do
-close(1) 
+close(1)
+call system('gnuplot -c cuadratico.p')
 !**********************************************************************
 end program cuadratico
