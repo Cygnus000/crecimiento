@@ -1,7 +1,7 @@
 # Modelos de Crecimiento de Tumores
 Codigos fortran 90 que implementan el metodo runge kutta de orden 2 para resolver Sistemas de Ecuaciones Diferenciales Ordinarias (EDOs) de diferentes modelos de crecimiento de tumores.
 Los modelos resueltos son:
--Crecimiento lineal (lineal.f90, lineal.p)\n
+-Crecimiento lineal (lineal.f90, lineal.p)/n
 -Crecimiento Cuadratico (cuadratico.f90 cuadratico.p)
 -Crecimiento Exponencial (exponencial.f90 exponencial.p)
 -Crecimiento Exponencial-lineal (exp-lineal.f90 plin.p)
