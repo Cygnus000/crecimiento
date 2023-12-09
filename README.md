@@ -7,18 +7,18 @@ Los modelos resueltos son:
 + Crecimiento Exponencial (exponencial.f90)
 + Crecimiento Exponencial-lineal (explin.f90)
 + Crecimiento Exponencial Generalizado (expGeneralizado.f90)
-+ Crecimiento Von Bertalanffy Generalizado (von.f90)
++ Crecimiento Von Bertalanffy (von.f90)
 + Crecimiento Logistico (logistico.f90)
 + Crecimiento Gompertz (gompertz.f90)
 
 Modelos de Crecimiento de con runge kutta de orden 4:
 
-+ + Crecimiento lineal (lineal4.f90)
++ Crecimiento lineal (lineal4.f90)
 + Crecimiento Cuadratico (cuadratico4.f90)
 + Crecimiento Exponencial (exponencial4.f90)
 + Crecimiento Exponencial-lineal (explin4.f90)
 + Crecimiento Exponencial Generalizado (expGeneralizado4.f90)
-+ Crecimiento Von Bertalanffy Generalizado (von4.f90)
++ Crecimiento Von Bertalanffy (von4.f90)
 + Crecimiento Logistico (logistico4.f90)
 + Crecimiento Gompertz (gompertz4.f90)
 
