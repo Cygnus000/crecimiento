@@ -11,6 +11,17 @@ Los modelos resueltos son:
 + Crecimiento Logistico (logistico.f90)
 + Crecimiento Gompertz (gompertz.f90)
 
+Modelos de Crecimiento de con runge kutta de orden 4:
+
++ + Crecimiento lineal (lineal4.f90)
++ Crecimiento Cuadratico (cuadratico4.f90)
++ Crecimiento Exponencial (exponencial4.f90)
++ Crecimiento Exponencial-lineal (explin4.f90)
++ Crecimiento Exponencial Generalizado (expGeneralizado4.f90)
++ Crecimiento Von Bertalanffy Generalizado (von4.f90)
++ Crecimiento Logistico (logistico4.f90)
++ Crecimiento Gompertz (gompertz4.f90)
+
 Codigos gnuplot para generar graficos homogeneos en formato png automaticamente a partir de los archivos de datos (*.dat) generados en fortran.
 
 + Crecimiento lineal (lineal.p)
