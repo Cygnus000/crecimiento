@@ -1,5 +1,5 @@
 # Modelos de Crecimiento de Tumores
-Codigos fortran 90 que implementan el metodo runge kutta de orden 2 para resolver Sistemas de Ecuaciones Diferenciales Ordinarias (EDOs) de diferentes modelos de crecimiento de tumores.
+Codigos fortran 90 que implementan el metodo Runge Kutta de orden 2 para resolver Sistemas de Ecuaciones Diferenciales Ordinarias (EDOs) de diferentes modelos de crecimiento de tumores.
 Los modelos resueltos son:
 
 + Crecimiento lineal (lineal.f90)
@@ -11,7 +11,7 @@ Los modelos resueltos son:
 + Crecimiento Logistico (logistico.f90)
 + Crecimiento Gompertz (gompertz.f90)
 
-Modelos de Crecimiento de con runge kutta de orden 4:
+Modelos de Crecimiento de tumores con Runge Kutta de orden 4:
 
 + Crecimiento lineal (lineal4.f90)
 + Crecimiento Cuadratico (cuadratico4.f90)
@@ -22,7 +22,7 @@ Modelos de Crecimiento de con runge kutta de orden 4:
 + Crecimiento Logistico (logistico4.f90)
 + Crecimiento Gompertz (gompertz4.f90)
 
-Codigos gnuplot para generar graficos homogeneos en formato png automaticamente a partir de los archivos de datos (*.dat) generados en fortran.
+Codigos gnuplot para generar graficos en formato png automaticamente a partir de los archivos de datos (*.dat) generados en fortran, estos son los mismos para RK2 y RK4:
 
 + Crecimiento lineal (lineal.p)
 + Crecimiento Cuadratico (cuadratico.p)
