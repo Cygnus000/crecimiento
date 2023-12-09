@@ -2,13 +2,22 @@
 Codigos fortran 90 que implementan el metodo runge kutta de orden 2 para resolver Sistemas de Ecuaciones Diferenciales Ordinarias (EDOs) de diferentes modelos de crecimiento de tumores.
 Los modelos resueltos son:
 
-+ Crecimiento lineal (lineal.f90, lineal.p)
-+ Crecimiento Cuadratico (cuadratico.f90 cuadratico.p)
-+ Crecimiento Exponencial (exponencial.f90 exponencial.p)
-+ Crecimiento Exponencial-lineal (exp-lineal.f90 plin.p)
-+ Crecimiento Exponencial Generalizado (expGeneralizado.f90 expG.p)
-+ Crecimiento Von Bertalanffy Generalizado (von.f90 von.p)
-+ Crecimiento Logistico (logistico.f90 logistico.p)
-+ Crecimiento Gompertz (gompertz.f90 gompertz.p)
++ Crecimiento lineal (lineal.f90)
++ Crecimiento Cuadratico (cuadratico.f90)
++ Crecimiento Exponencial (exponencial.f90)
++ Crecimiento Exponencial-lineal (exp-lineal.f90)
++ Crecimiento Exponencial Generalizado (expGeneralizado.f90)
++ Crecimiento Von Bertalanffy Generalizado (von.f90)
++ Crecimiento Logistico (logistico.f90)
++ Crecimiento Gompertz (gompertz.f90)
 
 Codigos gnuplot para generar graficos homogeneos en formato png automaticamente a partir de los archivos de datos (*.dat) generados en fortran.
+
++ Crecimiento lineal (lineal.p)
++ Crecimiento Cuadratico (cuadratico.p)
++ Crecimiento Exponencial (exponencial.p)
++ Crecimiento Exponencial-lineal (plin.p)
++ Crecimiento Exponencial Generalizado (expG.p)
++ Crecimiento Von Bertalanffy Generalizado (von.p)
++ Crecimiento Logistico (logistico.p)
++ Crecimiento Gompertz (gompertz.p)
