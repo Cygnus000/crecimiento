@@ -32,3 +32,13 @@ Codigos gnuplot para generar graficos en formato png automaticamente a partir de
 + Crecimiento Von Bertalanffy (von.p)
 + Crecimiento Logistico (logistico.p)
 + Crecimiento Gompertz (gompertz.p)
+
+
+![Modelo lineal](https://github.com/Cygnus000/tratamiento/blob/main/lineal.png)
+![Modelo cuadratico](https://github.com/Cygnus000/tratamiento/blob/main/cuadratico.png)
+![Modelo exponencial](https://github.com/Cygnus000/tratamiento/blob/main/exponencial.png)
+![Modelo exponencial-lineal](https://github.com/Cygnus000/tratamiento/blob/main/explin.png)
+![Modelo exponencial generalizado](https://github.com/Cygnus000/tratamiento/blob/main/expGeneralizado.png)
+![Modelo von bertalanffy](https://github.com/Cygnus000/tratamiento/blob/main/von.png)
+![Modelo logistico](https://github.com/Cygnus000/tratamiento/blob/main/logistico.png)
+![Modelo gompertz](https://github.com/Cygnus000/tratamiento/blob/main/gompertz.png)
