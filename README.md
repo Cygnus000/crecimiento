@@ -54,6 +54,6 @@ Las siguientes grafiacas corresponden al método de RK4
 ![Modelo logistico](https://github.com/Cygnus000/crecimiento/blob/main/logistico.png)
 ![Modelo gompertz](https://github.com/Cygnus000/crecimiento/blob/main/gompertz.png)
 
-Al emplear el Metodo de Dormand-Prince45 se pueden llegar a obtener graficas con apariecia no suave como la siguiente, esto debido a que varia el tamaño de paso en función de la presición predicha calculando el error con RK5-RK4. 
+Al emplear el Metodo de Dormand-Prince se pueden llegar a obtener graficas con apariecia no suave como la siguiente, esto debido a que varia el tamaño de paso en función de la presición predicha calculando el error con RK5-RK4. 
 
 ![comparacion de modelos](https://github.com/Cygnus000/crecimiento/blob/main/cuadratico-comparacion.png)
