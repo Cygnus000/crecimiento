@@ -44,7 +44,7 @@ Codigos gnuplot para generar graficos en formato png automaticamente a partir de
 + Crecimiento Logistico (logistico.p)
 + Crecimiento Gompertz (gompertz.p)
 
-
+Las siguientes grafiacas corresponden al método de RK4
 ![Modelo lineal](https://github.com/Cygnus000/crecimiento/blob/main/lineal.png)
 ![Modelo cuadratico](https://github.com/Cygnus000/crecimiento/blob/main/cuadratico.png)
 ![Modelo exponencial](https://github.com/Cygnus000/crecimiento/blob/main/exponencial.png)
@@ -53,3 +53,7 @@ Codigos gnuplot para generar graficos en formato png automaticamente a partir de
 ![Modelo von bertalanffy](https://github.com/Cygnus000/crecimiento/blob/main/von.png)
 ![Modelo logistico](https://github.com/Cygnus000/crecimiento/blob/main/logistico.png)
 ![Modelo gompertz](https://github.com/Cygnus000/crecimiento/blob/main/gompertz.png)
+
+Al emplear el Metodo de Dormand-Prince45 se pueden llegar a obtener graficas con apariecia no suave como la siguiente, esto debido a que varia el tamaño de paso en función de la presición predicha calculando el error con RK5-RK4. 
+
+![comparacion de modelos](https://github.com/Cygnus000/crecimiento/blob/main/cuadratico-comparacion.png)
