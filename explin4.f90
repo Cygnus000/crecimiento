@@ -61,7 +61,7 @@ contains
         k1 = dt * f( r              , t               )
         k2 = dt * f( r + 0.5_qp * k1, t + 0.5_qp * dt )
         k3 = dt * f( r + 0.5_qp * k2, t + 0.5_qp * dt )
-        k4 = dt * f( r + k3          , t + dt         )
+        k4 = dt * f( r + k3         , t + dt          )
 
         rk4 = ( k1 + ( 2._qp * k2 ) + ( 2._qp * k3 ) + k4 ) / 6._qp
     end function rk4

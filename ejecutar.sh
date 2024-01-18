@@ -1,16 +1,16 @@
 #!/bin/bash
  out=".out"
  dat=".dat"
- read -p "RungeKutta2 -> 2, RungeKutta4 -> 4, Dopri45 -> 45: " rk;
+ read -p "RungeKutta2 -> 2, RungeKutta4 -> 4, Dopri54 -> 54: " rk;
  if [ "$rk" == "2" ]
  then
     nombres="*[^4].f90"
  elif [ "$rk" == "4" ]
  then
     nombres="*[+4].f90"
- elif [ "$rk" == "45" ]
+ elif [ "$rk" == "54" ]
  then
-    nombres="*[+D][+P][+4][+5].f90"
+    nombres="*[+D][+P][+5][+4].f90"
  fi
 for i in $nombres; do
     nombre=$(echo $i | cut -d '.' -f 1)
