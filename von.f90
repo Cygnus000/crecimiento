@@ -2,7 +2,7 @@ program von
 !Resolucion de la ecuacion diferencial X'(t)=g*X**gamma-d*X con runge kutta de orden 2
 implicit none
 
-real(kind=8) t0,tmax,dt,x0,z0,g,gama,d
+real(kind=8) t0,tmax,dt,x0,g,gama,d
 real(kind=8), allocatable, dimension (:) :: t,x,z
 integer i,j,N
 

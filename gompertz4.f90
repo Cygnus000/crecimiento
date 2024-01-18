@@ -2,19 +2,18 @@ program gompertz
     use, intrinsic :: iso_fortran_env, only: qp=>real128
     implicit none
 
-    real(qp), parameter :: x0 = 0.05q0
-    real(qp), parameter :: k = 0.1q0
-    real(qp), parameter :: x_max = 120.0q0
+    real(qp), parameter :: x0 = 0.05_qp
+    real(qp), parameter :: k = 0.1_qp
+    real(qp), parameter :: x_max = 120._qp
 
-    real(qp), parameter :: t0 = 0.0q0
-    real(qp), parameter :: tmax = 100.0q0
-    integer          , parameter :: N    = 10000
+    real(qp), parameter :: t0 = 0._qp
+    real(qp), parameter :: tmax = 100._qp
+    integer , parameter :: N    = 10000
     real(qp), parameter :: dt = (tmax - t0) / dble(N)
-    integer          , parameter :: N_equ = 1    ! Numero de ecuaciones
+    integer , parameter :: N_equ = 1    ! Numero de ecuaciones
 
-    integer           :: i
-    real(qp) :: r(N_equ)
-    real(qp) :: t(N), x(N)
+    integer  :: i
+    real(qp) :: r(N_equ), t(N), x(N)
 !**********************************************************************
     t = [ ( dt * i, i = 1, N ) ]             ! llenando vector temporal
 !**********************************************************************
@@ -53,12 +52,12 @@ contains
         real(qp)             :: k1(N_equ), k2(N_equ)
         real(qp)             :: k3(N_equ), k4(N_equ)   
 
-        k1 = dt * f( r,            t                )
-        k2 = dt * f( r + 0.5q0 * k1, t + 0.5q0 * dt )
-        k3 = dt * f( r + 0.5q0 * k2, t + 0.5q0 * dt )
-        k4 = dt * f( r + k3        , t + dt         )
+        k1 = dt * f( r              , t               )
+        k2 = dt * f( r + 0.5_qp * k1, t + 0.5_qp * dt )
+        k3 = dt * f( r + 0.5_qp * k2, t + 0.5_qp * dt )
+        k4 = dt * f( r + k3         , t + dt          )
 
-        rk4 = ( k1 + ( 2.0q0 * k2 ) + ( 2.0q0 * k3 ) + k4 ) / 6.0q0
+        rk4 = ( k1 + ( 2._qp * k2 ) + ( 2._qp * k3 ) + k4 ) / 6._qp
     end function rk4
 !**********************************************************************
 end program gompertz
