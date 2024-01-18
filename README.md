@@ -24,14 +24,14 @@ Modelos de Crecimiento de tumores con Runge Kutta de orden 4:
 
 Modelos de Tratamiento de tumores con Dormand-Prince:
 
-+ Crecimiento lineal (lineal4.f90)
-+ Crecimiento Cuadratico (cuadratico4.f90)
-+ Crecimiento Exponencial (exponencial4.f90)
-+ Crecimiento Exponencial-lineal (explin4.f90)
-+ Crecimiento Exponencial Generalizado (expGeneralizado4.f90)
-+ Crecimiento Von Bertalanffy (von4.f90)
-+ Crecimiento Logistico (logistico4.f90)
-+ Crecimiento Gompertz (gompertz4.f90)
++ Crecimiento lineal (linealDP45.f90)
++ Crecimiento Cuadratico (cuadraticoDP45.f90)
++ Crecimiento Exponencial (exponencialDP45.f90)
++ Crecimiento Exponencial-lineal (explinDP45.f90)
++ Crecimiento Exponencial Generalizado (expGeneralizadoDP45.f90)
++ Crecimiento Von Bertalanffy (vonDP45.f90)
++ Crecimiento Logistico (logisticoDP45.f90)
++ Crecimiento Gompertz (gompertzDP45.f90)
 
 Codigos gnuplot para generar graficos en formato png automaticamente a partir de los archivos de datos (*.dat) generados en fortran, estos son los mismos para RK2 y RK4:
 
