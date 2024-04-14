@@ -1,8 +1,8 @@
 set terminal epslatex#pngcairo size 1200,750 enhanced font 'Verdana,23'
-set output 'cuadratico.tex'
-set title "Modelo Cuadrático"
+set output 'expGeneralizado.tex'
+set title "Modelo Exponencial Generalizado"
 unset key
 set xlabel "Tiempo (d)"
 set ylabel "Carga tumoral (mm)"
 set grid
-plot "cuadratico.dat" w l lt 6 lw 5
+plot "expGeneralizado.dat" w l lt 6 lw 5

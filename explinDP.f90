@@ -1,10 +1,11 @@
-program expGeneralizado
+program explin
     use, intrinsic :: iso_fortran_env, only: qp=>real128
     implicit none
     !valores iniciales
-    real(qp), parameter :: x0 = 0.05_qp
-    real(qp), parameter :: k = 0.1_qp
-    real(qp), parameter :: gama = 2._qp/3._qp
+    real(qp), parameter :: x0 = 2.0912_qp
+    real(qp), parameter :: k00 = 0.31_qp
+    real(qp), parameter :: k01 = 67.8_qp
+    real(qp), parameter :: tau = 15.0_qp
 
     real(qp), parameter :: t0 = 0.0_qp
     real(qp), parameter :: t_max = 100.0_qp
@@ -20,16 +21,16 @@ program expGeneralizado
 !**********************************************************************
     t = t0                                          ! valores iniciales
     r = [ x0 ]
-        open(1,file='expGeneralizado.dat')           ! llenando archivo
+        open(1,file='explin.dat')                    ! llenando archivo
 !**********************************************************************
     do                                                    ! resolviendo
-      write(1,*) t, x1
-      print*,    t, x1
+      write(1,*) t, r(1)
+      print*,    t, r(1)
 
       if( t .ge. t_max .or. step .ge. max_steps ) exit
         step=step+1
 
-        if ((t + dt) .gt. t_max) dt = t_max-t
+        if ((t + dt) > t_max) dt = t_max-t
         call adaptativo(r,t,dt,dt_next,tmp)
         t=t+dt
         r=r+tmp
@@ -37,9 +38,9 @@ program expGeneralizado
         x1 = r(1)
 
     end do
-    close(1)
     print*,'terminadon en ',step,'pasos.'
-    call system('gnuplot -c expGeneralizado.gplot')
+    close(1)
+    call system('gnuplot -c explin.gplot')
 !**********************************************************************
 contains
 !**********************************************************************
@@ -51,11 +52,15 @@ contains
 
         u = r(1)
 
-        f(1) = k*u**gama
+        if(t<tau) then
+            f(1) = k00*u
+        else
+            f(1) = k01
+        endif
 
     end function f
 !**********************************************************************
-    subroutine dopri(r, t, dt, errores, ytemp)  ! dormand prince
+    subroutine dopri(r, t, dt, errores, ytemp)         ! dormand-prince
     real(qp), intent(in)  :: r(N_equ) ! Valores
     real(qp), intent(in)  :: t    ! Paso
     real(qp), intent(in)  :: dt   ! Tamano de paso
@@ -134,7 +139,7 @@ contains
             call dopri(r,t,dt,errores,ytemp)
             yscal = r+dt*f(r, t)+tinny
             e_max  = maxval(abs(errores/yscal))/eps
-            if ( e_max .gt. 1._qp ) then
+            if ( e_max > 1._qp ) then
                 dt_temp=safety*dt*(e_max**PSHRNK)
                 dt=sign(max(abs(dt_temp),0.1_qp*abs(dt)),dt)
                 t_new=t+dt
@@ -148,7 +153,7 @@ contains
             endif
         enddo
 
-        if (e_max .gt. e_con) then
+        if (e_max > e_con) then
             dt_next=safety*dt*(e_max**PGROW)
         else
             dt_next=2.0_qp*dt
@@ -156,4 +161,4 @@ contains
 
     end subroutine adaptativo
 !**********************************************************************
-end program expGeneralizado
+end program explin

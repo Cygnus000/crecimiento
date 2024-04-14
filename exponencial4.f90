@@ -18,16 +18,15 @@ program exponencial
 !**********************************************************************
     r = [ x0 ]                                      ! valores iniciales
 !**********************************************************************
+    open(1,file='exponencial.dat')                   ! llenando archivo
     do i = 1, N                                           ! resolviendo
         x(i) = r(1)
         r = r + rk4( r, t(i), dt )
-!**********************************************************************
-        open(1,file='exponencial.dat')               ! llenando archivo
-          write(1,*) t(i), x(i)
-          print*,    t(i), x(i)
+        write(1,*) t(i), x(i)
+        print*,    t(i), x(i)
     end do
-    close(1) 
-    call system('gnuplot -c exponencial.p')
+    close(1)
+    call system('gnuplot -c exponencial.gplot')
 !**********************************************************************
 contains
 !**********************************************************************
@@ -46,10 +45,9 @@ contains
         real(qp), intent(in) :: r(N_equ) ! Valores
         real(qp), intent(in) :: t    ! Paso
         real(qp), intent(in) :: dt   ! Tamano de paso
-        real(qp)             :: rk4(N_equ)
-        real(qp)             :: k1(N_equ), k2(N_equ)
-        real(qp)             :: k3(N_equ), k4(N_equ)   
-
+        real(qp) :: rk4(N_equ)
+        real(qp) :: k1(N_equ), k2(N_equ), k3(N_equ), k4(N_equ)
+        
         k1 = dt * f( r              , t               )
         k2 = dt * f( r + 0.5_qp * k1, t + 0.5_qp * dt )
         k3 = dt * f( r + 0.5_qp * k2, t + 0.5_qp * dt )

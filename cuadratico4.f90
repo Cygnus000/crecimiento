@@ -13,23 +13,21 @@ program cuadratico
     integer , parameter :: N_equ = 1    ! Numero de ecuaciones
 
     integer  :: i
-    real(qp) :: r(N_equ), t(N), x(N) 
+    real(qp) :: r(N_equ), t(N), x(N)
 !**********************************************************************
     t = [ ( dt * i, i = 1, N ) ]             ! llenando vector temporal
 !**********************************************************************
-    r = [ x0 ]                                 ! valores iniciales
+    r = [ x0 ]                                      ! valores iniciales
 !**********************************************************************
+    open(1,file='cuadratico.dat')                    ! llenando archivo
     do i = 1, N                                           ! resolviendo
         x(i) = r(1)
-
         r = r + rk4( r, t(i), dt )
-!**********************************************************************
-        open(1,file='cuadratico.dat')                ! llenando archivo
-          write(1,*) t(i), x(i)
-          print*,    t(i), x(i)
+        write(1,*) t(i), x(i)
+        print*,    t(i), x(i)
     end do
-    close(1) 
-    call system('gnuplot -c cuadratico.p')
+    close(1)
+    call system('gnuplot -c cuadratico.gplot')
 !**********************************************************************
 contains
 !**********************************************************************
@@ -37,11 +35,9 @@ contains
         real(qp), intent(in) :: r(N_equ) ! Valores
         real(qp), intent(in) :: t    ! Paso
         real(qp)             :: f(N_equ)
-        real(qp)             :: u
-
-        u = r(1)
 
         f(1) = k1+2.0_qp*k2*t
+
     end function f
 !**********************************************************************
     pure function rk4(r, t, dt)                         ! Runge-Kutta 4
@@ -50,7 +46,7 @@ contains
         real(qp), intent(in) :: dt   ! Tamano de paso
         real(qp)             :: rk4(N_equ)
         real(qp)             :: k1(N_equ), k2(N_equ)
-        real(qp)             :: k3(N_equ), k4(N_equ)   
+        real(qp)             :: k3(N_equ), k4(N_equ)
 
         k1 = dt * f( r              , t               )
         k2 = dt * f( r + 0.5_qp * k1, t + 0.5_qp * dt )

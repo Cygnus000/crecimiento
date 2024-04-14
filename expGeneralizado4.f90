@@ -19,17 +19,16 @@ program expGeneralizado
 !**********************************************************************
     r = [ x0 ]                                      ! valores iniciales
 !**********************************************************************
+        open(1,file='expGeneralizado.dat')           ! llenando archivo
     do i = 1, N                                           ! resolviendo
         x(i) = r(1)
 
         r = r + rk4( r, t(i), dt )
-!**********************************************************************
-        open(1,file='expGeneralizado.dat')           ! llenando archivo
-          write(1,*) t(i), x(i)
-          print*,    t(i), x(i)
+        write(1,*) t(i), x(i)
+        print*,    t(i), x(i)
     end do
-    close(1) 
-    call system('gnuplot -c expGeneralizado.p')
+    close(1)
+    call system('gnuplot -c expGeneralizado.gplot')
 !**********************************************************************
 contains
 !**********************************************************************
@@ -50,7 +49,7 @@ contains
         real(qp), intent(in) :: dt   ! Tamano de paso
         real(qp)             :: rk4(N_equ)
         real(qp)             :: k1(N_equ), k2(N_equ)
-        real(qp)             :: k3(N_equ), k4(N_equ)   
+        real(qp)             :: k3(N_equ), k4(N_equ)
 
         k1 = dt * f( r              , t               )
         k2 = dt * f( r + 0.5_qp * k1, t + 0.5_qp * dt )

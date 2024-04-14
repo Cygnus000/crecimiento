@@ -1,9 +1,8 @@
-set terminal pngcairo size 1200,750 enhanced font 'Verdana,23'
-set output 'logistico.png'
+set terminal epslatex # pngcairo size 1200,750 enhanced font 'Verdana,23'
+set output 'logistico.tex'
 set title "Modelo Logistico"
 set xlabel "Tiempo (d)"
 set ylabel "Carga tumoral (mm)"
 set grid
 unset key
 plot "logistico.dat" w l lt 6 lw 5
-
