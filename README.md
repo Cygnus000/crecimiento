@@ -33,7 +33,7 @@ Modelos de Tratamiento de tumores con Dormand-Prince:
 + Crecimiento Logistico (logisticoDP.f90)
 + Crecimiento Gompertz (gompertzDP.f90)
 
-Codigos gnuplot para generar graficos en formato png automaticamente a partir de los archivos de datos (*.dat) generados en fortran, estos son los mismos para RK2 y RK4:
+Codigos gnuplot para generar graficos en formato eps y latex automaticamente a partir de los archivos de datos (*.dat) generados en fortran, estos son los mismos para RK2 y RK4:
 
 + Crecimiento lineal (lineal.p)
 + Crecimiento Cuadratico (cuadratico.p)
