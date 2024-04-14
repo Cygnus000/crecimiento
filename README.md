@@ -55,5 +55,5 @@ Las siguientes grafiacas corresponden al método de RK4
 ![Modelo gompertz](https://github.com/Cygnus000/crecimiento/blob/main/gompertz.png)
 
 Al emplear el Metodo de Dormand-Prince se pueden llegar a obtener graficas con apariecia no suave por lo tanto se define un tamaño maximo de paso para evitar esto, en este detalle se puede ver como se mantiene la precisión en un menor número de pasos.
-
+![comparacion de modelos](https://github.com/Cygnus000/crecimiento/blob/main/cuadratico-comparacion2.png)
 ![comparacion de modelos](https://github.com/Cygnus000/crecimiento/blob/main/cuadratico-comparacion.png)
